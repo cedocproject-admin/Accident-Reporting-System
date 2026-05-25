@@ -20,6 +20,10 @@
   <meta content="IE=Edge" http-equiv="X-UA-Compatible">
   <meta name="description" content="A new Flutter project.">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="cedoc-api-url" content="">
+  <meta name="cedoc-api-key" content="">
+  <meta name="cedoc-supabase-url" content="">
+  <meta name="cedoc-supabase-publishable-key" content="">
   <!-- iOS meta tags & icons -->
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
@@ -38,6 +42,26 @@
       var href = base.getAttribute('href') || '';
       if (href.indexOf('/') === -1) return;
       base.setAttribute('href', new URL('.', window.location.href).pathname);
+    })();
+  </script>
+  <script src="runtime-config.js"></script>
+  <script>
+    (function () {
+      var runtime = window.CEDOC_RUNTIME_CONFIG || {};
+      var mapping = {
+        'api-url': runtime.apiUrl,
+        'api-key': runtime.apiKey,
+        'supabase-url': runtime.supabaseUrl,
+        'supabase-publishable-key': runtime.supabasePublishableKey
+      };
+
+      Object.keys(mapping).forEach(function (key) {
+        var value = mapping[key];
+        if (typeof value !== 'string' || value.trim() === '') return;
+        var meta = document.querySelector('meta[name="cedoc-' + key + '"]');
+        if (!meta) return;
+        meta.setAttribute('content', value.trim());
+      });
     })();
   </script>
 </head>
