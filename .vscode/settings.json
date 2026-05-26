@@ -1,0 +1,26 @@
+{
+    "sqltools.connections": [
+        {
+            "ssh": "Disabled",
+            "previewLimit": 50,
+            "server": "aws-1-ap-northeast-1.pooler.supabase.com",
+            "port": 6543,
+            "driver": "PostgreSQL",
+            "name": "official_cedoc_db",
+            "group": "official_cedoc_db",
+            "database": "postgres",
+            "username": "postgres.qkvfynzduderxkmdzeib"
+        },
+        {
+            "ssh": "Disabled",
+            "previewLimit": 50,
+            "server": "aws-1-ap-south-1.pooler.supabase.com",
+            "port": 6543,
+            "driver": "PostgreSQL",
+            "database": "postgres",
+            "username": "postgres.ikaunnbriefsgvojcsif",
+            "name": "cedoc_db",
+            "group": "cedoc_db"
+        }
+    ]
+}
