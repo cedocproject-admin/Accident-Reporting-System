@@ -11879,11 +11879,11 @@ h4.k(0,g0,A.bi(h1.h(0,g0)))
 h4.k(0,g1,A.bi(h1.h(0,g1)))
 h4.k(0,g2,A.bum(h1.h(0,g2)))
 h4.k(0,"ob_lmp",A.bi(a3.h(0,"lmp")))
-h4.k(0,"ob_g",A.bi(a3.h(0,"g")))
-h4.k(0,"ob_t",A.bi(a3.h(0,"t")))
-h4.k(0,"ob_p",A.bi(a3.h(0,"p")))
-h4.k(0,"ob_a",A.bi(a3.h(0,"a")))
-h4.k(0,"ob_l",A.bi(a3.h(0,"l")))
+h4.k(0,"ob_g",A.nE(a3.h(0,"g")))
+h4.k(0,"ob_t",A.nE(a3.h(0,"t")))
+h4.k(0,"ob_p",A.nE(a3.h(0,"p")))
+h4.k(0,"ob_a",A.nE(a3.h(0,"a")))
+h4.k(0,"ob_l",A.nE(a3.h(0,"l")))
 h4.k(0,"gcs_eyes",A.nE(a1.h(0,"eyes")))
 h4.k(0,"gcs_verbal",A.nE(a1.h(0,"verbal")))
 h4.k(0,"gcs_motor",A.nE(a1.h(0,"motor")))
@@ -11986,11 +11986,22 @@ eL(a,b,c){if(a.aB(0,b)&&A.bi(a.h(0,b)).length!==0)return
 if(c==null)return
 if(typeof c=="string"&&B.e.j(c).length===0)return
 a.k(0,b,c)},
-boP(a){var s,r,q=J.i(a,"payload"),p=t.f
-if(p.b(q))return A.aB(q,t.N,t.z)
-if(typeof q=="string"&&B.e.j(q).length!==0)try{s=B.aV.eK(0,q,null)
-if(p.b(s)){p=A.aB(s,t.N,t.z)
-return p}}catch(r){}return A.z(t.N,t.z)},
+boP(a){var s,r,q=J.i(a,"payload"),p=t.f,o,n,m,l,k=t.N,j=t.z
+if(p.b(q))s=A.aB(q,k,j)
+else if(typeof q=="string"&&B.e.j(q).length!==0)try{r=B.aV.eK(0,q,null)
+s=p.b(r)?A.aB(r,k,j):A.z(k,j)}catch(o){s=A.z(k,j)}else s=A.z(k,j)
+o=function(u,v){var w=J.i(a,v);if(w!=null&&B.e.j(J.C(w)).length!==0&&!s.aB(0,u))s.k(0,u,w)}
+o("location","location");o("date_started","date_started");o("time_started","time_started");o("time_ended","time_ended");o("cause_of_fire","cause_of_fire");o("origin_of_fire","origin_of_fire");o("remarks","remarks")
+n=s.h(0,"impact");n=p.b(n)?A.aB(n,k,j):A.z(k,j)
+l=function(u,v){var w=J.i(a,v);if(w!=null&&B.e.j(J.C(w)).length!==0&&!n.aB(0,u))n.k(0,u,w)}
+l("number_of_deaths","number_of_deaths");l("number_of_injuries","number_of_injuries");l("estimated_cost_of_damage","estimated_cost_of_damage");l("establishments_or_houses_burned","establishments_or_houses_burned");l("families_affected","families_affected");l("total_people_affected","total_people_affected");s.k(0,"impact",n)
+m=s.h(0,"personnel");m=p.b(m)?A.aB(m,k,j):A.z(k,j)
+l=function(u,v){var w=J.i(a,v);if(w!=null&&B.e.j(J.C(w)).length!==0&&!m.aB(0,u))m.k(0,u,w)}
+l("investigator_on_case","investigator_on_case");l("fireground_commander","fireground_commander");l("additional_personnel","additional_personnel");s.k(0,"personnel",m)
+o("responder_name","responder_name");o("accident_date","accident_date");o("accident_time","accident_time");o("barangay","barangay");o("vehicles_involved","vehicles_involved");o("involved_vehicles","involved_vehicles");o("address","address");o("notes","notes")
+if(!t.j.b(s.h(0,"vehicle_versus"))){n=A.a([],t.s);if(J.f(J.i(a,"versus_another_vehicle"),!1))n.push("another_vehicle");if(J.f(J.i(a,"versus_pedestrian"),!1))n.push("pedestrian");if(J.f(J.i(a,"versus_fixed_object"),!1))n.push("fixed_object");if(J.f(J.i(a,"versus_animal"),!1))n.push("animal");if(n.length!==0)s.k(0,"vehicle_versus",n)}
+if(!t.j.b(s.h(0,"accident_types"))){n=A.a([],t.s);if(J.f(J.i(a,"type_fatal"),!1))n.push("fatal");if(J.f(J.i(a,"type_non_fatal"),!1))n.push("non_fatal");if(J.f(J.i(a,"type_damage_to_property"),!1))n.push("damage_to_property");if(J.f(J.i(a,"type_rear_end"),!1))n.push("rear_end");if(J.f(J.i(a,"type_side_swipe_same_direction"),!1))n.push("side_swipe_same_direction");if(J.f(J.i(a,"type_head_on"),!1))n.push("head_on");if(J.f(J.i(a,"type_angle"),!1))n.push("angle");if(J.f(J.i(a,"type_side_swipe_opposite_direction"),!1))n.push("side_swipe_opposite_direction");if(J.f(J.i(a,"type_hit_and_run"),!1))n.push("hit_and_run");if(J.f(J.i(a,"type_roll_over"),!1))n.push("roll_over");if(J.f(J.i(a,"type_multiple_vehicle_collision"),!1))n.push("multiple_vehicle_collision");if(J.f(J.i(a,"type_single_vehicle_accident"),!1))n.push("single_vehicle_accident");if(n.length!==0)s.k(0,"accident_types",n)}
+return s},
 nD(a){if(t.f.b(a))return A.aB(a,t.N,t.z)
 return A.z(t.N,t.z)},
 bi(a){var s=B.e.j(J.C(a==null?"":a))
@@ -12000,13 +12011,17 @@ for(s=a.length,r=0;r<s;++r){q=a[r]
 p=B.e.j(q)
 if(p.toUpperCase()==="N/A")p=""
 if(p.length!==0)return p}return""},
-nE(a){if(A.iN(a))return a
+nE(a){var s
+if(A.iN(a))return a
 if(typeof a=="number")return B.p.H(a)
-return A.cC(A.bi(a),null)},
+s=A.bi(a)
+if(s.length===0||s.toUpperCase()==="NA"||s==="-")return null
+return A.cC(A.c1(s,",",""),null)},
 bH5(a){var s
 if(typeof a=="number")return a
 if(typeof a=="number")return a
 s=A.bi(a)
+if(s.length===0||s.toUpperCase()==="NA"||s==="-")return null
 return A.uH(A.c1(s,",",""))},
 boQ(a){var s
 if(A.eB(a))return a
@@ -13531,23 +13546,27 @@ bdR:function bdR(){},
 a1s:function a1s(a){this.a=a},
 HE(a,b){var s,r,q,p,o,n,m=A.a([],t.Xb)
 for(s=b.length,r=0;r<s;++r){q=b[r]
-p=B.e.j(A.cJ(a.h(0,q),""))
+p=B.e.j(A.cJ(a.h(0,q),"-"))
+if(p.toUpperCase()==="N/A")p="-"
 if(p.length===0)continue
 m.push(new A.as(A.Bi(q),p))}for(s=new A.cN(a,A.y(a).i("cN<1,2>")).ga_(0);s.B();){o=s.d
 n=o.a
 if(B.h.n(b,n))continue
-p=B.e.j(A.cJ(o.b,""))
+p=B.e.j(A.cJ(o.b,"-"))
+if(p.toUpperCase()==="N/A")p="-"
 if(p.length===0)continue
 m.push(new A.as(A.Bi(n),p))}return m},
 bTR(a){var s,r,q,p,o,n,m,l,k,j,i,h,g
-if(!t.j.b(a)||J.e2(a)){s=B.e.j(A.cJ(a,"N/A"))
+if(!t.j.b(a)||J.e2(a)){s=B.e.j(A.cJ(a,"-"))
+if(s.toUpperCase()==="N/A")s="-"
 return s.length===0||s==="-"?B.Q4:A.a([new A.as("Vital Signs",s)],t.Xb)}r=A.a([],t.Xb)
 for(q=J.Z(a),p=t.N,o=t.z,n=t.f,m=0;m<q.gu(a);++m){l=q.h(a,m)
 if(!n.b(l)){s=B.e.j(A.cJ(l,""))
 if(s.length!==0)r.push(new A.as("Reading "+(m+1),s))
 continue}k=A.aB(l,p,o)
 for(j="Reading "+(m+1)+" ",i=0;i<6;++i){h=B.P0[i]
-g=B.e.j(A.cJ(k.h(0,h),""))
+g=B.e.j(A.cJ(k.h(0,h),"-"))
+if(g.toUpperCase()==="N/A")g="-"
 if(g.length===0)continue
 r.push(new A.as(j+A.Bi(h),g))}}return r},
 LH:function LH(a,b,c){this.c=a
@@ -13930,23 +13949,64 @@ if(t.P.b(b3))b1.a=A.aB(b3,t.N,t.z)
 else{s=t.N
 r=t.z
 if(t.f.b(b3))b1.a=A.aB(b3,s,r)
+else if(typeof b3=="string"&&B.e.j(b3).length!==0)try{s=A.bBl(b3,null)
+if(t.P.b(s))b1.a=A.aB(s,t.N,t.z)
+else if(t.f.b(s))b1.a=A.aB(s,t.N,t.z)
+else b1.a=A.z(t.N,t.z)}catch(a$){b1.a=A.z(t.N,t.z)}
 else b1.a=A.z(s,r)}q=new A.bnN(b1,b4)
 p=new A.bnM(b1)
+const fillNested=function(target,key,column){var x=J.Z(target),y=x.h(target,key),z=B.e.j(J.C(y==null?"":y)),w=b2.h(b4,column),v=B.e.j(J.C(w==null?"":w))
+if(z.length===0&&v.length!==0)x.k(target,key,v)}
 q.$2(c,c)
 q.$2(b,b)
+q.$2("on_scene_time","on_scene_time")
+q.$2("facility_time","facility_time")
 q.$2(a,a)
 q.$2(a0,a0)
 q.$2(a1,a1)
+q.$2("case_number","case_number")
+q.$2("date","case_date")
+q.$2("time","case_time")
+q.$2("location","location")
+q.$2("caller_name","caller_name")
+q.$2("patient_name","patient_name")
+q.$2("age","age")
+q.$2("gender","gender")
+q.$2("birthdate","birthdate")
+q.$2("address","address")
+q.$2("contact_number","contact_number")
 q.$2(a2,a2)
 q.$2("sjhc","sjhc")
 q.$2(a3,a3)
 q.$2(a4,a4)
+q.$2("case_type","case_type")
+q.$2("other_case_type","other_case_type")
+q.$2("skin_color","skin_color")
+q.$2("skin_temperature","skin_temperature")
+q.$2("skin_appearance","skin_appearance")
+q.$2("airway","airway")
+q.$2("oxygen","oxygen")
+q.$2("patient_position","patient_position")
 q.$2(a5,a5)
 q.$2(a6,a6)
+q.$2("vital_signs","vital_signs")
+q.$2("additional_medication","additional_medication")
+q.$2("comments_findings","comments_findings")
 q.$2(a7,a7)
+q.$2("received_by","received_by")
+q.$2("team_leader","team_leader")
 q.$2(a8,a8)
 q.$2(a9,a9)
+q.$2("md_rn_on_duty","md_rn_on_duty")
+q.$2("chart_prepared_by","chart_prepared_by")
 q.$2(b0,b0)
+o=p.$1("sample")
+fillNested(o,"signs_symptoms","sample_signs_symptoms")
+fillNested(o,"allergies","sample_allergies")
+fillNested(o,"medications","sample_medications")
+fillNested(o,"past_history","sample_past_history")
+fillNested(o,"last_intake","sample_last_intake")
+fillNested(o,"events","sample_events")
 o=p.$1("vaccine")
 for(s=B.VB.gei(B.VB),s=s.ga_(s),r=J.Z(o);s.B();){n=s.gR(s)
 m=n.a
@@ -13955,11 +14015,20 @@ k=B.e.j(J.C(l==null?"":l))
 n=b2.h(b4,n.b)
 j=B.e.j(J.C(n==null?"":n))
 if(k.length===0&&j.length!==0)r.k(o,m,j)}i=p.$1("treatment_management")
-s=b2.h(b4,b0)
-h=B.e.j(J.C(s==null?"":s))
-s=J.Z(i)
-r=s.h(i,"others")
-if(B.e.j(J.C(r==null?"":r)).length===0&&h.length!==0)s.k(i,"others",h)
+fillNested(i,"cpr_cycles","cpr_cycles")
+fillNested(i,"defibrillation","defibrillation")
+fillNested(i,"cardiac_monitor","cardiac_monitor")
+fillNested(i,"spine_immobilization","spine_immobilization")
+fillNested(i,"wound_management","wound_management")
+fillNested(i,"splint","splint")
+fillNested(i,"others",b0)
+o=p.$1("opqrst")
+fillNested(o,"onset","opqrst_onset")
+fillNested(o,"provocation","opqrst_provocation")
+fillNested(o,"quality","opqrst_quality")
+fillNested(o,"region_radiation","opqrst_region_radiation")
+fillNested(o,"severity","opqrst_severity")
+fillNested(o,"time","opqrst_time")
 g=p.$1("ob")
 for(s=B.VE.gei(B.VE),s=s.ga_(s),r=J.Z(g);s.B();){n=s.gR(s)
 m=n.a
@@ -13968,12 +14037,16 @@ k=B.e.j(J.C(l==null?"":l))
 n=b2.h(b4,n.b)
 j=B.e.j(J.C(n==null?"":n))
 if(k.length===0&&j.length!==0)r.k(g,m,j)}f=p.$1("gcs")
-s=b2.h(b4,a7)
-e=B.e.j(J.C(s==null?"":s))
-s=J.Z(f)
-r=s.h(f,"time")
-if(B.e.j(J.C(r==null?"":r)).length===0&&e.length!==0)s.k(f,"time",e)
+fillNested(f,"eyes","gcs_eyes")
+fillNested(f,"verbal","gcs_verbal")
+fillNested(f,"motor","gcs_motor")
+fillNested(f,"time",a7)
+fillNested(f,"total","gcs_total")
 d=p.$1("signatories")
+fillNested(d,"received_by","received_by")
+fillNested(d,"team_leader","team_leader")
+fillNested(d,"md_rn_on_duty","md_rn_on_duty")
+fillNested(d,"chart_prepared_by","chart_prepared_by")
 for(s=B.VD.gei(B.VD),s=s.ga_(s),r=J.Z(d);s.B();){n=s.gR(s)
 m=n.a
 l=r.h(d,m)
@@ -71383,7 +71456,13 @@ j=B.e.j(h==null?"":h)
 m.Jd(J.ap(j)===0?"Unable to submit report.":"Submit failed: "+A.m(j))
 n=[1]
 s=6
-break}A.bI(g,B.a8,a1?"Fire accident report saved as draft.":"Fire accident report submitted.",null,B.b3)
+break}h=J.i(l,"previewReport")
+if(t.f.b(h))k=A.aB(t.f.a(h),t.N,t.z)
+if(t.f.b(k)){J.bE(k,"draft",a1)
+J.bE(k,"status",a1?"draft":"submitted")
+h=J.i(k,"payload")
+if(t.f.b(h)){J.bE(h,"draft",a1)
+J.bE(h,"status",a1?"draft":"submitted")}}A.bI(g,B.a8,a1?"Fire accident report saved as draft.":"Fire accident report submitted.",null,B.b3)
 if(a1){h=m.c
 h.toString
 A.ak(h,!1).b9(k)
@@ -71391,7 +71470,7 @@ n=[1]
 s=6
 break}h=m.c
 h.toString
-A.ak(h,!1).bK()
+A.ak(h,!1).b9(k)
 n.push(7)
 s=6
 break
@@ -71557,9 +71636,9 @@ if(s==null)s=""
 this.a.saR(0,s)},
 $S:0}
 A.Kj.prototype={
-D(a){var s="personnel",r="Date Started",q="N/A",p="Time Started",o="Location",n=this.c,m=A.iw(n),l=t.f,k=t.N,j=t.z,i=l.b(m.h(0,"impact"))?A.aB(m.h(0,"impact"),k,j):A.z(k,j),h=l.b(m.h(0,s))?A.aB(m.h(0,s),k,j):A.z(k,j)
+D(a){var s="personnel",r="Date Started",q="-",p="Time Started",o="Location",n=this.c,m=A.iw(n),l=t.f,k=t.N,j=t.z,i=l.b(m.h(0,"impact"))?A.aB(m.h(0,"impact"),k,j):A.z(k,j),h=l.b(m.h(0,s))?A.aB(m.h(0,s),k,j):A.z(k,j),g=function(u,v){var w=u.h(0,v);if(w==null||String(w).trim().length===0)w=m.h(0,v);w=A.cJ(w,q);return String(w).toUpperCase()==="N/A"?"-":w}
 l=t.Xb
-return A.bqK(B.bbz,A.a([new A.as(r,A.aU(m,B.rD,q)),new A.as(p,A.aU(m,B.rK,q)),new A.as("Type","Fire Accident"),new A.as(o,A.aU(m,B.kB,q))],l),this.d,n,A.a([new A.he("Accident Overview",B.iI,A.a([new A.as(o,A.aU(m,B.kB,q)),new A.as(r,A.aU(m,B.rD,q)),new A.as(p,A.aU(m,B.rK,q)),new A.as("Time Ended",A.aU(m,B.A9,q)),new A.as("Cause of Fire",A.aU(m,B.rA,q)),new A.as("Origin of Fire",A.aU(m,B.A1,q)),new A.as("Remarks",A.aU(m,B.A4,q))],l)),new A.he("Impact Assessment",B.IK,A.a([new A.as("Number of Deaths",A.cJ(i.h(0,"number_of_deaths"),q)),new A.as("Number of Injuries",A.cJ(i.h(0,"number_of_injuries"),q)),new A.as("Estimated Cost of Damage",A.cJ(i.h(0,"estimated_cost_of_damage"),q)),new A.as("Establishments or Houses Burned",A.cJ(i.h(0,"establishments_or_houses_burned"),q)),new A.as("Families Affected",A.cJ(i.h(0,"families_affected"),q)),new A.as("Total People Affected",A.cJ(i.h(0,"total_people_affected"),q))],l)),new A.he("Assigned Personnel",B.mn,A.a([new A.as("Investigator on Case",A.cJ(h.h(0,"investigator_on_case"),q)),new A.as("Fireground Commander",A.cJ(h.h(0,"fireground_commander"),q))],l))],t.NW),"Dedicated fire report view with the same polished details layout.","Fire Accident Details")}}
+return A.bqK(B.bbz,A.a([new A.as(r,A.aU(m,B.rD,q)),new A.as(p,A.aU(m,B.rK,q)),new A.as("Type","Fire Accident"),new A.as(o,A.aU(m,B.kB,q))],l),this.d,n,A.a([new A.he("Accident Overview",B.iI,A.a([new A.as(o,A.aU(m,B.kB,q)),new A.as(r,A.aU(m,B.rD,q)),new A.as(p,A.aU(m,B.rK,q)),new A.as("Time Ended",A.aU(m,B.A9,q)),new A.as("Cause of Fire",A.aU(m,B.rA,q)),new A.as("Origin of Fire",A.aU(m,B.A1,q)),new A.as("Remarks",A.aU(m,B.A4,q))],l)),new A.he("Impact Assessment",B.IK,A.a([new A.as("Number of Deaths",g(i,"number_of_deaths")),new A.as("Number of Injuries",g(i,"number_of_injuries")),new A.as("Estimated Cost of Damage",g(i,"estimated_cost_of_damage")),new A.as("Establishments or Houses Burned",g(i,"establishments_or_houses_burned")),new A.as("Families Affected",g(i,"families_affected")),new A.as("Total People Affected",g(i,"total_people_affected"))],l)),new A.he("Assigned Personnel",B.mn,A.a([new A.as("Investigator on Case",g(h,"investigator_on_case")),new A.as("Fireground Commander",g(h,"fireground_commander"))],l))],t.NW),"Dedicated fire report view with the same polished details layout.","Fire Accident Details")}}
 A.a_d.prototype={
 D(a){return B.bDY}}
 A.bnx.prototype={
@@ -71843,7 +71922,8 @@ o.toString
 s=3
 return A.c(A.ak(o,!1).en(A.ha(new A.b__(),null,t.H)),$async$JQ)
 case 3:if(p.c==null){s=1
-break}if(p.d==="fire_reports")p.A(new A.b_0(p))
+break}if(t.f.b(b)){globalThis.__cedocPendingReports=globalThis.__cedocPendingReports||[]
+globalThis.__cedocPendingReports.unshift(b);try{var z="cedoc_responder_report_overrides_v1",y=window.localStorage,x=JSON.parse(y.getItem(z)||"[]"),w=String(J.i(b,"report_id")||"");x=x.filter(function(v){return String(v&&v.report_id||"")!==w});x.unshift(b);y.setItem(z,JSON.stringify(x.slice(0,200)))}catch(v){}}if(p.d==="fire_reports")p.A(new A.b_0(p))
 case 1:return A.p(q,r)}})
 return A.q($async$JQ,r)},
 JS(){var s=0,r=A.r(t.H),q,p=this,o
@@ -71853,7 +71933,8 @@ o.toString
 s=3
 return A.c(A.ak(o,!1).en(A.ha(new A.b_5(),null,t.H)),$async$JS)
 case 3:if(p.c==null){s=1
-break}if(p.d==="traffic_reports")p.A(new A.b_6(p))
+break}if(t.f.b(b)){globalThis.__cedocPendingReports=globalThis.__cedocPendingReports||[]
+globalThis.__cedocPendingReports.unshift(b);try{var z="cedoc_responder_report_overrides_v1",y=window.localStorage,x=JSON.parse(y.getItem(z)||"[]"),w=String(J.i(b,"report_id")||"");x=x.filter(function(v){return String(v&&v.report_id||"")!==w});x.unshift(b);y.setItem(z,JSON.stringify(x.slice(0,200)))}catch(v){}}if(p.d==="traffic_reports")p.A(new A.b_6(p))
 case 1:return A.p(q,r)}})
 return A.q($async$JS,r)},
 JR(){var s=0,r=A.r(t.H),q,p=this,o
@@ -71863,7 +71944,8 @@ o.toString
 s=3
 return A.c(A.ak(o,!1).en(A.ha(new A.b_1(),null,t.H)),$async$JR)
 case 3:if(p.c==null){s=1
-break}if(p.d==="medical_reports")p.A(new A.b_2(p))
+break}if(t.f.b(b)){globalThis.__cedocPendingReports=globalThis.__cedocPendingReports||[]
+globalThis.__cedocPendingReports.unshift(b);try{var z="cedoc_responder_report_overrides_v1",y=window.localStorage,x=JSON.parse(y.getItem(z)||"[]"),w=String(J.i(b,"report_id")||"");x=x.filter(function(v){return String(v&&v.report_id||"")!==w});x.unshift(b);y.setItem(z,JSON.stringify(x.slice(0,200)))}catch(v){}}if(p.d==="medical_reports")p.A(new A.b_2(p))
 case 1:return A.p(q,r)}})
 return A.q($async$JR,r)},
 JP(){var s=0,r=A.r(t.H),q=this,p
@@ -74764,7 +74846,7 @@ $S:906}
 A.a1s.prototype={
 D(a){return B.bDX}}
 A.LH.prototype={
-D(a){var s,r="treatment_management",q="signatories",p="N/A",o=this.c,n=A.iw(o),m=t.f,l=t.N,k=t.z,j=m.b(n.h(0,"sample"))?A.aB(n.h(0,"sample"),l,k):A.z(l,k),i=m.b(n.h(0,"opqrst"))?A.aB(n.h(0,"opqrst"),l,k):A.z(l,k),h=m.b(n.h(0,"vaccine"))?A.aB(n.h(0,"vaccine"),l,k):A.z(l,k),g=m.b(n.h(0,r))?A.aB(n.h(0,r),l,k):A.z(l,k),f=m.b(n.h(0,"ob"))?A.aB(n.h(0,"ob"),l,k):A.z(l,k),e=m.b(n.h(0,"gcs"))?A.aB(n.h(0,"gcs"),l,k):A.z(l,k),d=m.b(n.h(0,q))?A.aB(n.h(0,q),l,k):A.z(l,k)
+D(a){var s,r="treatment_management",q="signatories",p="-",o=this.c,n=A.iw(o),m=t.f,l=t.N,k=t.z,j=m.b(n.h(0,"sample"))?A.aB(n.h(0,"sample"),l,k):A.z(l,k),i=m.b(n.h(0,"opqrst"))?A.aB(n.h(0,"opqrst"),l,k):A.z(l,k),h=m.b(n.h(0,"vaccine"))?A.aB(n.h(0,"vaccine"),l,k):A.z(l,k),g=m.b(n.h(0,r))?A.aB(n.h(0,r),l,k):A.z(l,k),f=m.b(n.h(0,"ob"))?A.aB(n.h(0,"ob"),l,k):A.z(l,k),e=m.b(n.h(0,"gcs"))?A.aB(n.h(0,"gcs"),l,k):A.z(l,k),d=m.b(n.h(0,q))?A.aB(n.h(0,q),l,k):A.z(l,k)
 m=t.Xb
 l=A.a([new A.as("Skin Color",A.aU(n,B.A7,p)),new A.as("Skin Temperature",A.aU(n,B.A8,p)),new A.as("Skin Appearance",A.aU(n,B.A6,p)),new A.as("Airway",A.aU(n,B.zH,p)),new A.as("Oxygen",A.aU(n,B.A2,p)),new A.as("Patient Position",A.aU(n,B.A3,p)),new A.as("Other Position",A.aU(n,B.Qn,p)),new A.as("Body Diagram Notes",A.aU(n,B.PW,p))],m)
 k=A.HE(e,B.Q6)
@@ -75257,11 +75339,19 @@ h=A.eX(J.e2(j)?"No saved report was returned by the server.":j)
 throw A.j(h)}h=m.c
 if(h==null){n=[1]
 s=6
-break}if(a1)A.bI(h,B.a8,"Draft saved.",null,B.b3)
-else{A.bI(h,B.a8,"Medical report submitted.",null,B.b3)
+break}h=J.i(l,"previewReport")
+if(t.f.b(h))k=A.aB(t.f.a(h),t.N,t.z)
+if(t.f.b(k)){J.bE(k,"draft",a1)
+J.bE(k,"status",a1?"draft":"submitted")
+h=J.i(k,"payload")
+if(t.f.b(h)){J.bE(h,"draft",a1)
+J.bE(h,"status",a1?"draft":"submitted")}}h=m.c
+h.toString
+if(a1){A.bI(h,B.a8,"Draft saved.",null,B.b3)
+A.ak(h,!1).b9(k)}else{A.bI(h,B.a8,"Medical report submitted.",null,B.b3)
 h=m.c
 h.toString
-A.ak(h,!1).bK()}n.push(7)
+A.ak(h,!1).b9(k)}n.push(7)
 s=6
 break
 case 5:p=4
@@ -77066,7 +77156,7 @@ e1=p.bc(b7.h(0,"address"))
 e2=p.bc(b7.h(0,"contact_number"))
 e3=p.bc(b7.h(0,"health_card"))
 e4=p.bc(b7.h(0,"sjhc"))
-e5=p.bc(b7.h(0,"health_card_no"))
+e5=p.mB(b7.h(0,"health_card_no"))
 e6=p.bc(b7.h(0,"other_hc"))
 e7=p.bc(b7.h(0,"case_type"))
 e8=p.bc(b7.h(0,"caller_name"))
@@ -77104,11 +77194,11 @@ h9=p.bc(b7.h(0,"patient_position_others"))
 i0=p.bc(b7.h(0,"body_diagram_notes"))
 i1=p.aay(b7.h(0,"vital_signs"))
 i2=p.bc(c7.h(0,"lmp"))
-i3=p.bc(c7.h(0,"g"))
-i4=p.bc(c7.h(0,"t"))
-i5=p.bc(c7.h(0,"p"))
-i6=p.bc(c7.h(0,"a"))
-i7=p.bc(c7.h(0,"l"))
+i3=p.mB(c7.h(0,"g"))
+i4=p.mB(c7.h(0,"t"))
+i5=p.mB(c7.h(0,"p"))
+i6=p.mB(c7.h(0,"a"))
+i7=p.mB(c7.h(0,"l"))
 i8=p.mB(c5.h(0,"eyes"))
 i9=p.mB(c5.h(0,"verbal"))
 j0=p.mB(c5.h(0,"motor"))
@@ -79232,9 +79322,12 @@ n=A.D(n,A.y(n).i("l.E"))
 return n}}return A.a([],t.Y)},
 ayX(a){return this.a5g(a,B.aE)},
 q(a){return B.e.j(J.C(a==null?"":a))},
-mB(a){if(A.iN(a))return a
+mB(a){var s
+if(A.iN(a))return a
 if(typeof a=="number")return B.p.H(a)
-return A.cC(this.q(a),null)},
+s=this.bc(a)
+if(s.length===0||s.toUpperCase()==="NA"||s==="-")return null
+return A.cC(A.c1(s,",",""),null)},
 aap(a){var s
 if(A.eB(a))return a
 if(typeof a=="number")return a!==0
@@ -79243,7 +79336,8 @@ return s==="true"||s==="yes"||s==="1"||s==="x"},
 aP0(a){var s
 if(typeof a=="number")return a
 if(typeof a=="number")return a
-s=this.q(a)
+s=this.bc(a)
+if(s.length===0||s.toUpperCase()==="NA"||s==="-")return null
 return A.uH(A.c1(s,",",""))},
 Su(a){var s,r=this.bc(a)
 if(r.length===0)return null
@@ -79384,7 +79478,7 @@ k=a4.q(a5.h(a8,"remarks")).length!==0?a5.h(a8,"remarks"):a5.h(a8,"description")
 j=a5.h(a8,"location")
 i=a4.q(a5.h(a8,a1)).length!==0?a5.h(a8,a1):a5.h(a8,"reporter_contact")
 h=a5.h(a8,g)
-a6=A.V(["patient_name",a6,"case_type",l,"remarks",k,"location",j,"contact_number",i,"attachment",h,"draft",q,"status",q?"draft":a],t.N,t.z)}l=a7.cc()
+a6=A.V(["date",a5.h(a8,"case_date"),"time",a5.h(a8,"case_time"),"location",j,"caller_name",a5.h(a8,"caller_name"),"case_number",a5.h(a8,b),"time_of_call",a5.h(a8,"time_of_call"),"dispatch_time",a5.h(a8,"dispatch_time"),"on_scene_time",a5.h(a8,"on_scene_time"),"facility_time",a5.h(a8,"facility_time"),"back_to_base_time",a5.h(a8,"back_to_base_time"),"service_provided",a5.h(a8,"service_provided"),"vehicle_used",a5.h(a8,"vehicle_used"),"patient_name",a6,"age",a5.h(a8,"age"),"gender",a5.h(a8,"gender"),"birthdate",a5.h(a8,"birthdate"),"address",a5.h(a8,"address"),"contact_number",i,"health_card",a5.h(a8,"health_card"),"sjhc",a5.h(a8,"sjhc"),"health_card_no",a5.h(a8,"health_card_no"),"other_hc",a5.h(a8,"other_hc"),"case_type",l,"other_case_type",a5.h(a8,"other_case_type"),"skin_color",a5.h(a8,"skin_color"),"skin_temperature",a5.h(a8,"skin_temperature"),"skin_appearance",a5.h(a8,"skin_appearance"),"airway",a5.h(a8,"airway"),"oxygen",a5.h(a8,"oxygen"),"sample",A.V(["signs_symptoms",a5.h(a8,"sample_signs_symptoms"),"allergies",a5.h(a8,"sample_allergies"),"medications",a5.h(a8,"sample_medications"),"past_history",a5.h(a8,"sample_past_history"),"last_intake",a5.h(a8,"sample_last_intake"),"events",a5.h(a8,"sample_events")],t.N,t.z),"vaccine",A.V(["first_dose",a5.h(a8,"vaccine_first_dose"),"second_dose",a5.h(a8,"vaccine_second_dose"),"first_booster",a5.h(a8,"vaccine_first_booster"),"second_booster",a5.h(a8,"vaccine_second_booster")],t.N,t.z),"opqrst",A.V(["onset",a5.h(a8,"opqrst_onset"),"provocation",a5.h(a8,"opqrst_provocation"),"quality",a5.h(a8,"opqrst_quality"),"region_radiation",a5.h(a8,"opqrst_region_radiation"),"severity",a5.h(a8,"opqrst_severity"),"time",a5.h(a8,"opqrst_time")],t.N,t.z),"treatment_management",A.V(["cpr_cycles",a5.h(a8,"cpr_cycles"),"defibrillation",a5.h(a8,"defibrillation"),"cardiac_monitor",a5.h(a8,"cardiac_monitor"),"spine_immobilization",a5.h(a8,"spine_immobilization"),"wound_management",a5.h(a8,"wound_management"),"splint",a5.h(a8,"splint"),"others",a5.h(a8,"management_others")],t.N,t.z),"patient_position",a5.h(a8,"patient_position"),"patient_position_others",a5.h(a8,"patient_position_others"),"body_diagram_notes",a5.h(a8,"body_diagram_notes"),"vital_signs",a5.h(a8,"vital_signs"),"ob",A.V(["lmp",a5.h(a8,"ob_lmp"),"g",a5.h(a8,"ob_g"),"t",a5.h(a8,"ob_t"),"p",a5.h(a8,"ob_p"),"a",a5.h(a8,"ob_a"),"l",a5.h(a8,"ob_l")],t.N,t.z),"gcs",A.V(["eyes",a5.h(a8,"gcs_eyes"),"verbal",a5.h(a8,"gcs_verbal"),"motor",a5.h(a8,"gcs_motor"),"time",a5.h(a8,"gcs_time"),"total",a5.h(a8,"gcs_total")],t.N,t.z),"additional_medication",a5.h(a8,"additional_medication"),"comments_findings",a5.h(a8,"comments_findings"),"signatories",A.V(["received_by",a5.h(a8,"received_by"),"team_leader",a5.h(a8,"team_leader"),"transport_officer",a5.h(a8,"transport_officer"),"treatment_officer",a5.h(a8,"treatment_officer"),"md_rn_on_duty",a5.h(a8,"md_rn_on_duty"),"chart_prepared_by",a5.h(a8,"chart_prepared_by")],t.N,t.z),"remarks",k,"attachment",h,"draft",q,"status",q?"draft":a],t.N,t.z)}l=a7.cc()
 k=a4.q(s.h(0,a2))
 if(a4.q(s.h(0,a3)).length!==0)a4=a4.q(s.h(0,a3))
 else a4=a4.q(a5.h(a8,a3)).length!==0?a4.q(a5.h(a8,a3)):a4.q(a5.h(a8,"reporter_name"))
@@ -79404,15 +79498,14 @@ n=a2.q(r.h(0,c)).length!==0?a2.q(r.h(0,c)):a2.q(a3.h(a6,c))
 m=a2.q(r.h(0,b)).length!==0?a2.q(r.h(0,b)):a2.q(a3.h(a6,b))
 if(a2.q(p.h(0,d)).length!==0)l=a2.q(p.h(0,d))
 else l=o?"draft":a
-if(p.a!==0)k=p
-else{k=a3.h(a6,"date_started")
+k=a3.h(a6,"date_started")
 j=a3.h(a6,"time_started")
 i=a3.h(a6,"time_ended")
 h=a3.h(a6,"cause_of_fire")
 g=a3.h(a6,"origin_of_fire")
 f=a3.h(a6,"location")
 e=a3.h(a6,"remarks")
-k=A.V(["date_started",k,"time_started",j,"time_ended",i,"cause_of_fire",h,"origin_of_fire",g,"location",f,"remarks",e,"draft",o,"status",o?"draft":a],a4,s)}j=a5.cc()
+k=A.V(["date_started",k,"time_started",j,"time_ended",i,"cause_of_fire",h,"origin_of_fire",g,"location",f,"remarks",e,"impact",A.V(["number_of_deaths",a3.h(a6,"number_of_deaths"),"number_of_injuries",a3.h(a6,"number_of_injuries"),"estimated_cost_of_damage",a3.h(a6,"estimated_cost_of_damage"),"establishments_or_houses_burned",a3.h(a6,"establishments_or_houses_burned"),"families_affected",a3.h(a6,"families_affected"),"total_people_affected",a3.h(a6,"total_people_affected")],a4,s),"personnel",A.V(["investigator_on_case",a3.h(a6,"investigator_on_case"),"fireground_commander",a3.h(a6,"fireground_commander"),"additional_personnel",a3.h(a6,"additional_personnel")],a4,s),"draft",o,"status",o?"draft":a],a4,s);j=a5.cc()
 i=a2.q(r.h(0,a0))
 if(a2.q(r.h(0,a1)).length!==0)a2=a2.q(r.h(0,a1))
 else a2=a2.q(a3.h(a6,a1)).length!==0?a2.q(a3.h(a6,a1)):a2.q(a3.h(a6,"reporter_name"))
@@ -79432,13 +79525,12 @@ n=a1.q(r.h(0,e)).length!==0?a1.q(r.h(0,e)):a1.q(a2.h(a5,e))
 m=a1.q(r.h(0,d)).length!==0?a1.q(r.h(0,d)):a1.q(a2.h(a5,d))
 if(a1.q(p.h(0,f)).length!==0)l=a1.q(p.h(0,f))
 else l=o?"draft":c
-if(p.a!==0)k=p
-else{k=a2.h(a5,"responder_name")
+k=a2.h(a5,"responder_name")
 j=a2.h(a5,"patient_name")
 i=a2.h(a5,b)
 h=a2.h(a5,"notes")
 g=a2.h(a5,"address")
-k=A.V(["responder_name",k,"patient_name",j,b,i,"notes",h,"address",g,"draft",o,"status",o?"draft":c],a3,s)}j=a4.cc()
+k=A.V(["responder_name",k,"patient_name",j,"accident_date",a2.h(a5,"accident_date"),"accident_time",a2.h(a5,"accident_time"),"barangay",a2.h(a5,"barangay"),b,a2.h(a5,b),"vehicle_versus",A.a([J.f(a2.h(a5,"versus_another_vehicle"),!1)?"another_vehicle":"",J.f(a2.h(a5,"versus_pedestrian"),!1)?"pedestrian":"",J.f(a2.h(a5,"versus_fixed_object"),!1)?"fixed_object":"",J.f(a2.h(a5,"versus_animal"),!1)?"animal":""],t.s),"vehicle_versus_details",A.V(["another_vehicle",a2.h(a5,"another_vehicle_detail"),"pedestrian",a2.h(a5,"pedestrian_detail"),"fixed_object",a2.h(a5,"fixed_object_detail"),"animal",a2.h(a5,"animal_detail")],a3,s),"accident_types",A.a([J.f(a2.h(a5,"type_fatal"),!1)?"fatal":"",J.f(a2.h(a5,"type_non_fatal"),!1)?"non_fatal":"",J.f(a2.h(a5,"type_damage_to_property"),!1)?"damage_to_property":"",J.f(a2.h(a5,"type_rear_end"),!1)?"rear_end":"",J.f(a2.h(a5,"type_side_swipe_same_direction"),!1)?"side_swipe_same_direction":"",J.f(a2.h(a5,"type_head_on"),!1)?"head_on":"",J.f(a2.h(a5,"type_angle"),!1)?"angle":"",J.f(a2.h(a5,"type_side_swipe_opposite_direction"),!1)?"side_swipe_opposite_direction":"",J.f(a2.h(a5,"type_hit_and_run"),!1)?"hit_and_run":"",J.f(a2.h(a5,"type_roll_over"),!1)?"roll_over":"",J.f(a2.h(a5,"type_multiple_vehicle_collision"),!1)?"multiple_vehicle_collision":"",J.f(a2.h(a5,"type_single_vehicle_accident"),!1)?"single_vehicle_accident":""],t.s),"involved_vehicles",i,"notes",h,"address",g,"draft",o,"status",o?"draft":c],a3,s);j=a4.cc()
 i=a1.q(r.h(0,a))
 if(a1.q(r.h(0,a0)).length!==0)a1=a1.q(r.h(0,a0))
 else a1=a1.q(a2.h(a5,a0)).length!==0?a1.q(a2.h(a5,a0)):a1.q(a2.h(a5,"reporter_name"))
@@ -79487,7 +79579,7 @@ if(a0.q(a1.h(a4,d)).length!==0)i=a0.q(a1.h(a4,d))
 else i=J.f(a1.h(a4,e),!0)?e:c
 h=t.N
 g=t.z
-i=A.V(["patient_name",o,"case_type",n,"remarks",m,"location",l,"contact_number",k,"draft",j,"status",i],h,g)
+i=A.V(["date",a1.h(a4,"case_date"),"time",a1.h(a4,"case_time"),"location",l,"caller_name",a1.h(a4,"caller_name"),"case_number",a1.h(a4,"case_number"),"time_of_call",a1.h(a4,"time_of_call"),"dispatch_time",a1.h(a4,"dispatch_time"),"on_scene_time",a1.h(a4,"on_scene_time"),"facility_time",a1.h(a4,"facility_time"),"back_to_base_time",a1.h(a4,"back_to_base_time"),"service_provided",a1.h(a4,"service_provided"),"vehicle_used",a1.h(a4,"vehicle_used"),"patient_name",o,"age",a1.h(a4,"age"),"gender",a1.h(a4,"gender"),"birthdate",a1.h(a4,"birthdate"),"address",a1.h(a4,"address"),"contact_number",k,"health_card",a1.h(a4,"health_card"),"sjhc",a1.h(a4,"sjhc"),"health_card_no",a1.h(a4,"health_card_no"),"other_hc",a1.h(a4,"other_hc"),"case_type",n,"other_case_type",a1.h(a4,"other_case_type"),"skin_color",a1.h(a4,"skin_color"),"skin_temperature",a1.h(a4,"skin_temperature"),"skin_appearance",a1.h(a4,"skin_appearance"),"airway",a1.h(a4,"airway"),"oxygen",a1.h(a4,"oxygen"),"sample",A.V(["signs_symptoms",a1.h(a4,"sample_signs_symptoms"),"allergies",a1.h(a4,"sample_allergies"),"medications",a1.h(a4,"sample_medications"),"past_history",a1.h(a4,"sample_past_history"),"last_intake",a1.h(a4,"sample_last_intake"),"events",a1.h(a4,"sample_events")],h,g),"vaccine",A.V(["first_dose",a1.h(a4,"vaccine_first_dose"),"second_dose",a1.h(a4,"vaccine_second_dose"),"first_booster",a1.h(a4,"vaccine_first_booster"),"second_booster",a1.h(a4,"vaccine_second_booster")],h,g),"opqrst",A.V(["onset",a1.h(a4,"opqrst_onset"),"provocation",a1.h(a4,"opqrst_provocation"),"quality",a1.h(a4,"opqrst_quality"),"region_radiation",a1.h(a4,"opqrst_region_radiation"),"severity",a1.h(a4,"opqrst_severity"),"time",a1.h(a4,"opqrst_time")],h,g),"treatment_management",A.V(["cpr_cycles",a1.h(a4,"cpr_cycles"),"defibrillation",a1.h(a4,"defibrillation"),"cardiac_monitor",a1.h(a4,"cardiac_monitor"),"spine_immobilization",a1.h(a4,"spine_immobilization"),"wound_management",a1.h(a4,"wound_management"),"splint",a1.h(a4,"splint"),"others",a1.h(a4,"management_others")],h,g),"patient_position",a1.h(a4,"patient_position"),"patient_position_others",a1.h(a4,"patient_position_others"),"body_diagram_notes",a1.h(a4,"body_diagram_notes"),"vital_signs",a1.h(a4,"vital_signs"),"ob",A.V(["lmp",a1.h(a4,"ob_lmp"),"g",a1.h(a4,"ob_g"),"t",a1.h(a4,"ob_t"),"p",a1.h(a4,"ob_p"),"a",a1.h(a4,"ob_a"),"l",a1.h(a4,"ob_l")],h,g),"gcs",A.V(["eyes",a1.h(a4,"gcs_eyes"),"verbal",a1.h(a4,"gcs_verbal"),"motor",a1.h(a4,"gcs_motor"),"time",a1.h(a4,"gcs_time"),"total",a1.h(a4,"gcs_total")],h,g),"additional_medication",a1.h(a4,"additional_medication"),"comments_findings",a1.h(a4,"comments_findings"),"signatories",A.V(["received_by",a1.h(a4,"received_by"),"team_leader",a1.h(a4,"team_leader"),"transport_officer",a1.h(a4,"transport_officer"),"treatment_officer",a1.h(a4,"treatment_officer"),"md_rn_on_duty",a1.h(a4,"md_rn_on_duty"),"chart_prepared_by",a1.h(a4,"chart_prepared_by")],h,g),"remarks",m,"draft",j,"status",i],h,g)
 j=a3.cc()
 k=A.cC(a0.q(a1.h(a4,b)),null)
 o=k==null?a3.a:k
@@ -79514,7 +79606,7 @@ if(a2.q(a3.h(a6,b)).length!==0)g=a2.q(a3.h(a6,b))
 else g=J.f(a3.h(a6,c),!0)?c:a
 f=t.N
 e=t.z
-g=A.V(["date_started",o,"time_started",n,"time_ended",m,"cause_of_fire",l,"origin_of_fire",k,"location",j,"remarks",i,"draft",h,"status",g],f,e)
+g=A.V(["date_started",o,"time_started",n,"time_ended",m,"cause_of_fire",l,"origin_of_fire",k,"location",j,"remarks",i,"impact",A.V(["number_of_deaths",a3.h(a6,"number_of_deaths"),"number_of_injuries",a3.h(a6,"number_of_injuries"),"estimated_cost_of_damage",a3.h(a6,"estimated_cost_of_damage"),"establishments_or_houses_burned",a3.h(a6,"establishments_or_houses_burned"),"families_affected",a3.h(a6,"families_affected"),"total_people_affected",a3.h(a6,"total_people_affected")],f,e),"personnel",A.V(["investigator_on_case",a3.h(a6,"investigator_on_case"),"fireground_commander",a3.h(a6,"fireground_commander"),"additional_personnel",a3.h(a6,"additional_personnel")],f,e),"draft",h,"status",g],f,e)
 h=a5.cc()
 i=A.cC(a2.q(a3.h(a6,a0)),null)
 o=i==null?a5.a:i
@@ -79539,7 +79631,7 @@ if(a0.q(a1.h(a4,d)).length!==0)i=a0.q(a1.h(a4,d))
 else i=J.f(a1.h(a4,e),!0)?e:c
 h=t.N
 g=t.z
-i=A.V(["responder_name",o,"patient_name",n,"vehicles_involved",m,"notes",l,"address",k,"draft",j,"status",i],h,g)
+i=A.V(["responder_name",o,"patient_name",n,"accident_date",a1.h(a4,"accident_date"),"accident_time",a1.h(a4,"accident_time"),"barangay",a1.h(a4,"barangay"),"vehicles_involved",a1.h(a4,"vehicles_involved"),"vehicle_versus",A.a([J.f(a1.h(a4,"versus_another_vehicle"),!1)?"another_vehicle":"",J.f(a1.h(a4,"versus_pedestrian"),!1)?"pedestrian":"",J.f(a1.h(a4,"versus_fixed_object"),!1)?"fixed_object":"",J.f(a1.h(a4,"versus_animal"),!1)?"animal":""],t.s),"vehicle_versus_details",A.V(["another_vehicle",a1.h(a4,"another_vehicle_detail"),"pedestrian",a1.h(a4,"pedestrian_detail"),"fixed_object",a1.h(a4,"fixed_object_detail"),"animal",a1.h(a4,"animal_detail")],h,g),"accident_types",A.a([J.f(a1.h(a4,"type_fatal"),!1)?"fatal":"",J.f(a1.h(a4,"type_non_fatal"),!1)?"non_fatal":"",J.f(a1.h(a4,"type_damage_to_property"),!1)?"damage_to_property":"",J.f(a1.h(a4,"type_rear_end"),!1)?"rear_end":"",J.f(a1.h(a4,"type_side_swipe_same_direction"),!1)?"side_swipe_same_direction":"",J.f(a1.h(a4,"type_head_on"),!1)?"head_on":"",J.f(a1.h(a4,"type_angle"),!1)?"angle":"",J.f(a1.h(a4,"type_side_swipe_opposite_direction"),!1)?"side_swipe_opposite_direction":"",J.f(a1.h(a4,"type_hit_and_run"),!1)?"hit_and_run":"",J.f(a1.h(a4,"type_roll_over"),!1)?"roll_over":"",J.f(a1.h(a4,"type_multiple_vehicle_collision"),!1)?"multiple_vehicle_collision":"",J.f(a1.h(a4,"type_single_vehicle_accident"),!1)?"single_vehicle_accident":""],t.s),"involved_vehicles",m,"notes",l,"address",k,"draft",j,"status",i],h,g)
 j=a3.cc()
 k=A.cC(a0.q(a1.h(a4,b)),null)
 o=k==null?a3.a:k
@@ -79876,10 +79968,11 @@ n=B.h.aL(l,".")
 k=i.aPd(l)
 j=h.cC(0,n,new A.b9m())
 if(j.a.a!==k)j.saR(0,k)}},
-aPd(a){var s,r,q,p,o=A.iw(this.a.e)
+aPd(a){var s,r,q,p,o,n=A.iw(this.a.e),m=this.a.e,l=function(){var u=B.h.gaa(a),v=J.i(n,u);if(v==null||B.e.j(J.C(v)).length===0)v=J.i(m,u);return v==null?"":B.e.j(J.C(v))}
+o=n
 for(s=a.length,r=t.f,q=0;q<s;++q){p=a[q]
 if(r.b(o)&&J.wj(o,p))o=J.i(o,p)
-else return""}if(o==null)return""
+else return l()}if(o==null)return l()
 if(s!==0&&B.h.gaa(a)==="involved_vehicles")return A.bnQ(o,"")
 if(t.j.b(o)){s=J.dx(o,new A.b9z(),t.N).dN(0,new A.b9A())
 s=A.D(s,s.$ti.i("l.E"))
@@ -79897,7 +79990,8 @@ if(o.b(j))n=j
 else if(p.b(j)){n=A.aB(j,r,q)
 a.k(0,l,n)}else{i=A.z(r,q)
 k.k(n,l,i)
-n=i}}J.bE(n,B.h.gaa(b),B.e.j(c))},
+n=i}}l=B.h.gaa(b)
+if(b.length===1&&(l==="vehicle_versus"||l==="accident_types")){i=A.a([],t.s);k=B.e.j(c).split(/[,\n;]+/);for(j=0;j<k.length;++j){m=B.e.j(k[j]).toLowerCase().replace(/[_-]/g," ").replace(/\s+/g," ").trim();if(m==="another vehicle")m="another_vehicle";else if(m==="pedestrian")m="pedestrian";else if(m==="fixed object")m="fixed_object";else if(m==="animal")m="animal";else if(m==="fatal")m="fatal";else if(m==="non fatal")m="non_fatal";else if(m==="damage to property")m="damage_to_property";else if(m==="rear end")m="rear_end";else if(m==="side swipe same direction")m="side_swipe_same_direction";else if(m==="head on")m="head_on";else if(m==="angle")m="angle";else if(m==="side swipe opposite direction")m="side_swipe_opposite_direction";else if(m==="hit and run")m="hit_and_run";else if(m==="roll over")m="roll_over";else if(m==="multiple vehicle collision")m="multiple_vehicle_collision";else if(m==="single vehicle accident")m="single_vehicle_accident";else m="";if(m.length!==0&&!B.h.n(i,m))i.push(m)}J.bE(n,l,i);return}J.bE(n,l,B.e.j(c))},
 Ls(a){return this.aR4(a)},
 aR4(a2){var s=0,r=A.r(t.H),q,p=this,o,n,m,l,k,j,i,h,g,f,e,d,c,b,a,a0,a1
 var $async$Ls=A.n(function(a3,a4){if(a3===1)return A.o(a4,r)
@@ -79908,8 +80002,9 @@ if(n.length===0){A.bI(a2,B.a8,"Missing active session.",null,B.aU)
 s=1
 break}p.A(new A.b9B(p))
 m=p.axb()
-m.k(0,"draft",!0)
-m.k(0,"status","draft")
+a1=p.gka()
+m.k(0,"draft",a1)
+m.k(0,"status",a1?"draft":"submitted")
 for(o=p.a.w,l=o.length,k=p.d,j=0;j<l;++j)for(i=o[j].b,h=i.length,g=0;g<h;++g){f=i[g].b
 e=k.h(0,B.h.aL(f,"."))
 d=e==null?null:e.a.a
@@ -79941,14 +80036,14 @@ if(p.c==null){s=1
 break}p.A(new A.b9C(p))
 if(a0==null){o=o.a
 a1=B.e.j(o==null?"":o)
-A.bI(a2,B.a8,a1.length===0?"Unable to save draft report.":a1,null,B.aU)
+A.bI(a2,B.a8,a1.length===0?"Unable to save report changes.":a1,null,B.aU)
 s=1
 break}J.bE(p.a.e,"payload",m)
-J.bE(p.a.e,"draft",!0)
-J.bE(p.a.e,"status","draft")
+J.bE(p.a.e,"draft",a1)
+J.bE(p.a.e,"status",a1?"draft":"submitted")
 o=A.ak(a2,!1)
 l=J.i(p.a.e,"report_id")
-o.b9(A.V(["updated",!0,"report_id",J.C(l==null?"":l),"draft",!0,"status","draft","payload",m],t.N,t.z))
+o.b9(A.V(["updated",!0,"report_id",J.C(l==null?"":l),"draft",a1,"status",a1?"draft":"submitted","payload",m],t.N,t.z))
 case 1:return A.p(q,r)}})
 return A.q($async$Ls,r)},
 v2(a){return this.aK_(a)},
@@ -80262,7 +80357,7 @@ o=t.p
 n=A.a([],o)
 n.push(A.cn(h,h,h,B.hH,h,h,new A.b9D(i,a,p),h,h,h,"View Documents",h))
 if(i.gka()&&i.gka()&&i.gCe())n.push(A.cn(h,h,h,B.aof,h,h,i.e?h:new A.b9E(i,a),h,h,h,"Done Case",h))
-if(i.gCe())n.push(A.cn(h,h,h,B.ao6,h,h,i.e?h:new A.b9F(i,a),h,h,h,"Save draft report",h))
+if(i.gCe())n.push(A.cn(h,h,h,B.ao6,h,h,i.e?h:new A.b9F(i,a),h,h,h,"Save report changes",h))
 n.push(A.cn(h,h,h,B.Jq,h,h,new A.b9G(i,a,p,g),h,h,h,"Export responder report",h))
 if(A.bs($.c7)==="superadmin"){m=i.gka()?"Delete report":"Archive report"
 l=i.gka()?B.iM:B.h0
@@ -80378,12 +80473,12 @@ return A.q($async$$1,r)},
 $1(a){return this.alN(a)},
 $S:989}
 A.b9h.prototype={
-$1(a){return A.aU(this.a,A.a([a],t.s),"N/A")},
+$1(a){return A.aU(this.a,A.a([a],t.s),"-")},
 $S:10}
 A.b9b.prototype={
 $2(a,b){var s=this.a.h(0,a)
-if(t.f.b(s))return A.cJ(J.i(s,b),"N/A")
-return"N/A"},
+if(t.f.b(s))return A.cJ(J.i(s,b),"-")
+return"-"},
 $S:153}
 A.b95.prototype={
 $5$height$labelSize$valueSize(a,b,c,d,e){var s=null,r=new A.fo(this.a,0.5,B.cj)
@@ -80441,8 +80536,8 @@ for(p=k.d,o=t.rD,n=o.i("aq.E"),m=0;m<5;++m){l=A.D(new A.B(A.a(["time","bp","rr",
 q.push(new A.di(l,null))}return A.pM(h,q,null)},
 $S:33}
 A.b9l.prototype={
-$2(a,b){if(t.f.b(a))return A.cJ(J.i(a,b),"N/A")
-return"N/A"},
+$2(a,b){if(t.f.b(a))return A.cJ(J.i(a,b),"-")
+return"-"},
 $S:205}
 A.b9j.prototype={
 $1(a){var s=null
@@ -80712,9 +80807,9 @@ s=A.ah(B.lG,1)
 return A.kd(o,B.hw,A.d7(A.ck(new A.cK(B.o4,A.M(A.a([A.O(q,A.X(A.a([B.hH,B.ak,A.R(A.w(r.c+" Document",q,q,q,q,B.a1x,q,q,q),1)],p),B.z,B.r,B.t,0,q),B.v,q,q,new A.T(B.u,q,s,n,q,q,B.D),q,q,q,B.x9,q,q,q),B.bH,r.d],p),B.ag,q,B.r,B.t,0,B.A),q),q,q),q,q,B.x8,q,q,B.aw),q,q)}}
 A.abW.prototype={
 dK(a,b){var s=this.c.h(0,a)
-if(t.f.b(s))return A.cJ(J.i(s,b),"N/A")
-return"N/A"},
-D(b3){var s,r,q=this,p=null,o="N/A",n="vaccine",m="treatment_management",l="gcs",k="signatories",j=new A.b3w(),i=new A.b3B(),h=new A.b3x(),g=A.E(14),f=A.ah(B.p0,1),e=t.p,d=q.c,c=t.s,b=A.R(A.M(A.a([A.a_(A.X(A.a([A.k4("assets/logo/logo1.png",p,p,42),B.aP,B.alY,B.aP,A.k4("assets/logo/logo2.png",p,p,42)],e),B.z,B.ek,B.t,0,p),64,p),A.X(A.a([A.R(j.$2("DATE",A.aU(d,A.a(["date"],c),o)),1),A.R(j.$2("CALLER",A.aU(d,A.a(["caller_name"],c),o)),1)],e),B.z,B.r,B.t,0,p),j.$2("NAME",A.aU(d,A.a(["patient_name"],c),o)),A.X(A.a([A.R(j.$2("AGE",A.cJ(d.h(0,"age"),o)),1),A.R(j.$2("GENDER",A.aU(d,A.a(["gender"],c),o)),1),A.R(j.$2("BIRTHDATE",A.aU(d,A.a(["birthdate"],c),o)),1)],e),B.z,B.r,B.t,0,p),j.$2("ADDRESS",A.aU(d,A.a(["address"],c),o)),j.$2("CONTACT NUMBER",A.aU(d,A.a(["contact_number"],c),o)),A.X(A.a([A.R(j.$2("HEALTH CARD",A.aU(d,A.a(["health_card"],c),o)),1),A.R(j.$2("SJHC",A.aU(d,A.a(["sjhc"],c),o)),1),A.R(j.$2("NO.",A.aU(d,A.a(["health_card_no"],c),o)),1)],e),B.z,B.r,B.t,0,p),j.$2("OTHER HC",A.aU(d,A.a(["other_hc"],c),o)),new A.b3A(q,i,j).$0(),i.$1("VACCINE"),A.X(A.a([A.R(j.$2("1st Dose",q.dK(n,"first_dose")),1),A.R(j.$2("1st Booster",q.dK(n,"first_booster")),1)],e),B.z,B.r,B.t,0,p),A.X(A.a([A.R(j.$2("2nd Dose",q.dK(n,"second_dose")),1),A.R(j.$2("2nd Booster",q.dK(n,"second_booster")),1)],e),B.z,B.r,B.t,0,p),new A.b3z(q,j).$0(),h.$3("PATIENT'S POSITION",B.zx,A.aU(d,A.a(["patient_position"],c),o)),A.O(p,p,B.v,p,p,new A.T(p,p,A.ah(B.dw,0.8),p,p,p,B.D),p,210,p,p,p,p,p)],e),B.ag,p,B.r,B.t,0,B.A),1),a=A.O(B.c6,B.a1F,B.v,p,p,p,p,28,p,B.HB,p,p,p),a0=new A.b3C(q).$0(),a1=i.$1("SERVICE PROVIDED"),a2=j.$3$minHeight("",A.aU(d,A.a(["service_provided"],c),o),42),a3=i.$1("VEHICLE USED"),a4=j.$3$minHeight("",A.aU(d,A.a(["vehicle_used"],c),o),42),a5=i.$1("SKIN"),a6=A.X(A.a([A.R(h.$3("COLOR",B.zB,A.aU(d,A.a(["skin_color"],c),o)),1),A.R(h.$3("TEMPERATURE",B.zJ,A.aU(d,A.a(["skin_temperature"],c),o)),1),A.R(h.$3("APPEARANCE",B.zy,A.aU(d,A.a(["skin_appearance"],c),o)),1)],e),B.z,B.r,B.t,0,p),a7=A.X(A.a([A.R(h.$3("AIRWAY",B.zs,A.aU(d,A.a(["airway"],c),o)),1),A.R(h.$3("OXYGEN",B.zw,A.aU(d,A.a(["oxygen"],c),o)),1)],e),B.z,B.r,B.t,0,p),a8=A.X(A.a([A.R(j.$3$minHeight("CPR","No. of Cycles: "+q.dK(m,"cpr_cycles")+"\nDefibrillation: "+q.dK(m,"defibrillation")+"\nCardiac Monitor: "+q.dK(m,"cardiac_monitor"),76),1),A.R(j.$3$minHeight("MANAGEMENT","Spine Immobilization: "+q.dK(m,"spine_immobilization")+"\nWound Management: "+q.dK(m,"wound_management")+"\nSplint: "+q.dK(m,"splint")+"\nOthers: "+q.dK(m,"others"),72),1)],e),B.z,B.r,B.t,0,p),a9=j.$2("MEDICATION",A.aU(d,A.a(["additional_medication"],c),o)),b0=i.$1("VITAL SIGNS"),b1=new A.b3E(q).$0(),b2=A.a([A.R(j.$3$minHeight("OB LMP",q.dK("ob","lmp"),32),1)],e)
+if(t.f.b(s))return A.cJ(J.i(s,b),"-")
+return"-"},
+D(b3){var s,r,q=this,p=null,o="-",n="vaccine",m="treatment_management",l="gcs",k="signatories",j=new A.b3w(),i=new A.b3B(),h=new A.b3x(),g=A.E(14),f=A.ah(B.p0,1),e=t.p,d=q.c,c=t.s,b=A.R(A.M(A.a([A.a_(A.X(A.a([A.k4("assets/logo/logo1.png",p,p,42),B.aP,B.alY,B.aP,A.k4("assets/logo/logo2.png",p,p,42)],e),B.z,B.ek,B.t,0,p),64,p),A.X(A.a([A.R(j.$2("DATE",A.aU(d,A.a(["date"],c),o)),1),A.R(j.$2("CALLER",A.aU(d,A.a(["caller_name"],c),o)),1)],e),B.z,B.r,B.t,0,p),j.$2("NAME",A.aU(d,A.a(["patient_name"],c),o)),A.X(A.a([A.R(j.$2("AGE",A.cJ(d.h(0,"age"),o)),1),A.R(j.$2("GENDER",A.aU(d,A.a(["gender"],c),o)),1),A.R(j.$2("BIRTHDATE",A.aU(d,A.a(["birthdate"],c),o)),1)],e),B.z,B.r,B.t,0,p),j.$2("ADDRESS",A.aU(d,A.a(["address"],c),o)),j.$2("CONTACT NUMBER",A.aU(d,A.a(["contact_number"],c),o)),A.X(A.a([A.R(j.$2("HEALTH CARD",A.aU(d,A.a(["health_card"],c),o)),1),A.R(j.$2("SJHC",A.aU(d,A.a(["sjhc"],c),o)),1),A.R(j.$2("NO.",A.aU(d,A.a(["health_card_no"],c),o)),1)],e),B.z,B.r,B.t,0,p),j.$2("OTHER HC",A.aU(d,A.a(["other_hc"],c),o)),new A.b3A(q,i,j).$0(),i.$1("VACCINE"),A.X(A.a([A.R(j.$2("1st Dose",q.dK(n,"first_dose")),1),A.R(j.$2("1st Booster",q.dK(n,"first_booster")),1)],e),B.z,B.r,B.t,0,p),A.X(A.a([A.R(j.$2("2nd Dose",q.dK(n,"second_dose")),1),A.R(j.$2("2nd Booster",q.dK(n,"second_booster")),1)],e),B.z,B.r,B.t,0,p),new A.b3z(q,j).$0(),h.$3("PATIENT'S POSITION",B.zx,A.aU(d,A.a(["patient_position"],c),o)),A.O(p,p,B.v,p,p,new A.T(p,p,A.ah(B.dw,0.8),p,p,p,B.D),p,210,p,p,p,p,p)],e),B.ag,p,B.r,B.t,0,B.A),1),a=A.O(B.c6,B.a1F,B.v,p,p,p,p,28,p,B.HB,p,p,p),a0=new A.b3C(q).$0(),a1=i.$1("SERVICE PROVIDED"),a2=j.$3$minHeight("",A.aU(d,A.a(["service_provided"],c),o),42),a3=i.$1("VEHICLE USED"),a4=j.$3$minHeight("",A.aU(d,A.a(["vehicle_used"],c),o),42),a5=i.$1("SKIN"),a6=A.X(A.a([A.R(h.$3("COLOR",B.zB,A.aU(d,A.a(["skin_color"],c),o)),1),A.R(h.$3("TEMPERATURE",B.zJ,A.aU(d,A.a(["skin_temperature"],c),o)),1),A.R(h.$3("APPEARANCE",B.zy,A.aU(d,A.a(["skin_appearance"],c),o)),1)],e),B.z,B.r,B.t,0,p),a7=A.X(A.a([A.R(h.$3("AIRWAY",B.zs,A.aU(d,A.a(["airway"],c),o)),1),A.R(h.$3("OXYGEN",B.zw,A.aU(d,A.a(["oxygen"],c),o)),1)],e),B.z,B.r,B.t,0,p),a8=A.X(A.a([A.R(j.$3$minHeight("CPR","No. of Cycles: "+q.dK(m,"cpr_cycles")+"\nDefibrillation: "+q.dK(m,"defibrillation")+"\nCardiac Monitor: "+q.dK(m,"cardiac_monitor"),76),1),A.R(j.$3$minHeight("MANAGEMENT","Spine Immobilization: "+q.dK(m,"spine_immobilization")+"\nWound Management: "+q.dK(m,"wound_management")+"\nSplint: "+q.dK(m,"splint")+"\nOthers: "+q.dK(m,"others"),72),1)],e),B.z,B.r,B.t,0,p),a9=j.$2("MEDICATION",A.aU(d,A.a(["additional_medication"],c),o)),b0=i.$1("VITAL SIGNS"),b1=new A.b3E(q).$0(),b2=A.a([A.R(j.$3$minHeight("OB LMP",q.dK("ob","lmp"),32),1)],e)
 for(s=0;s<5;++s){r=B.bbD[s]
 b2.push(new A.e7(1,B.bC,j.$3$minHeight(r.toUpperCase(),q.dK("ob",r),32),p))}return A.O(p,A.ck(A.O(p,A.X(A.a([b,A.R(A.M(A.a([a,a0,a1,a2,a3,a4,a5,a6,a7,a8,a9,b0,b1,A.X(b2,B.z,B.r,B.t,0,p),i.$1("GCS"),A.X(A.a([A.R(j.$2("EYES",q.dK(l,"eyes")),1),A.R(j.$2("VERBAL",q.dK(l,"verbal")),1),A.R(j.$2("MOTOR",q.dK(l,"motor")),1),A.R(j.$2("TIME",q.dK(l,"time")),1),A.R(j.$2("GCS",q.dK(l,"total")),1)],e),B.z,B.r,B.t,0,p),j.$3$minHeight("COMMENTS / FINDINGS",A.aU(d,A.a(["comments_findings"],c),o),94),A.X(A.a([A.R(j.$2("RECEIVED BY",q.dK(k,"received_by")),1),A.R(j.$2("TEAM LEADER",q.dK(k,"team_leader")),1)],e),B.z,B.r,B.t,0,p),A.X(A.a([A.R(j.$2("TRANSPORT OFFICER",q.dK(k,"transport_officer")),1),A.R(j.$2("TREATMENT OFFICER",q.dK(k,"treatment_officer")),1)],e),B.z,B.r,B.t,0,p),A.X(A.a([A.R(j.$2("MD/RN ON DUTY",q.dK(k,"md_rn_on_duty")),1),A.R(j.$2("CHART PREPARED BY",q.dK(k,"chart_prepared_by")),1)],e),B.z,B.r,B.t,0,p)],e),B.ag,p,B.r,B.t,0,B.A),1)],e),B.I,B.r,B.t,0,p),B.v,B.u,p,p,p,p,p,B.d5,p,p,760),p,p),B.v,p,p,new A.T(B.oF,p,f,g,p,p,B.D),p,p,p,B.cv,p,p,p)}}
 A.b3w.prototype={
@@ -80757,7 +80852,7 @@ for(p=0;p<5;++p){o=A.D(new A.B(A.a(["time","bp","rr","pr","temperature","spo2"],
 q.push(new A.hM(m,m,o))}return A.a5G(l,q,m,B.nt)},
 $S:74}
 A.b3H.prototype={
-$2(a,b){return t.f.b(a)?A.cJ(J.i(a,b),"N/A"):""},
+$2(a,b){return t.f.b(a)?A.cJ(J.i(a,b),"-"):"-"},
 $S:205}
 A.b3F.prototype={
 $1(a){var s=null
@@ -80768,7 +80863,7 @@ $1(a){var s=null,r=this.a,q=this.b
 return new A.ag(B.px,A.w(r<q.length?this.c.$2(q[r],a):"",s,s,s,s,B.a1c,s,s,s),s)},
 $S:122}
 A.b3C.prototype={
-$0(){var s,r,q,p,o="N/A",n=this.a.c,m=t.s,l=t.J,k=[new A.a5("TIME OF CALL",A.aU(n,A.a(["time_of_call"],m),o),l),new A.a5("DISPATCH",A.aU(n,A.a(["dispatch_time"],m),o),l),new A.a5("ON SCENE",A.aU(n,A.a(["on_scene_time"],m),o),l),new A.a5("FACILITY",A.aU(n,A.a(["facility_time"],m),o),l),new A.a5("BACK TO BASE",A.aU(n,A.a(["back_to_base_time"],m),o),l)],j=new A.b3D()
+$0(){var s,r,q,p,o="-",n=this.a.c,m=t.s,l=t.J,k=[new A.a5("TIME OF CALL",A.aU(n,A.a(["time_of_call"],m),o),l),new A.a5("DISPATCH",A.aU(n,A.a(["dispatch_time"],m),o),l),new A.a5("ON SCENE",A.aU(n,A.a(["on_scene_time"],m),o),l),new A.a5("FACILITY",A.aU(n,A.a(["facility_time"],m),o),l),new A.a5("BACK TO BASE",A.aU(n,A.a(["back_to_base_time"],m),o),l)],j=new A.b3D()
 l=A.aIn(B.dw,0.8)
 s=t.p
 r=A.a([new A.hM(null,B.o7,A.a([j.$2$bold("",!0),j.$3$align$bold("TIME",B.bq,!0),j.$3$align$bold("LOCATION",B.bq,!0)],s))],t.pH)
@@ -81690,6 +81785,9 @@ o.toString
 s=3
 return A.c(A.ak(o,!1).en(A.ha(a.c,null,t.H)),$async$Du)
 case 3:if(p.c==null){s=1
+break}if(t.f.b(c)){p.aPI(c)
+p.av6(c)
+s=1
 break}s=4
 return A.c(p.kN(),$async$Du)
 case 4:case 1:return A.p(q,r)}})
@@ -81900,7 +81998,7 @@ break}if(!l){o=o.a
 j=B.e.j(o==null?"":o)
 A.bI(k,B.a8,j.length===0?"Unable to delete report.":j,null,B.aU)
 s=1
-break}p.A(new A.bc_(p,n))
+break}try{var z="cedoc_responder_report_overrides_v1",y=window.localStorage,x=JSON.parse(y.getItem(z)||"[]");x=x.filter(function(v){return String(v&&v.report_id||"")!==n});y.setItem(z,JSON.stringify(x))}catch(w){}p.A(new A.bc_(p,n))
 o=p.c
 o.toString
 A.bI(o,B.a8,"Report permanently deleted.",null,B.b3)
@@ -81992,8 +82090,20 @@ $1(a){var s=J.i(a,"report_id"),r=B.e.j(J.C(s==null?"":s))
 return!J.I3(r,"CASEWS-")&&!A.alA(r)},
 $S:13}
 A.bcc.prototype={
-$0(){var s=this.a
-s.f=s.av2(s.av3(this.b))
+$0(){var s=this.a,r=A.a([],t.Y),q=globalThis.__cedocPendingReports,p,o,n,m,l,k,j,i,h
+try{var z=window.localStorage&&window.localStorage.getItem("cedoc_responder_report_overrides_v1");if(z){var y=JSON.parse(z);if(y&&y.length)q=(q&&q.length)?q.concat(y):y}}catch(x){}
+B.h.M(r,this.b)
+if(q&&q.length){p=s.jy(s.a.f)
+for(o=0;o<q.length;++o){n=q[o]
+if(!t.f.b(n))continue
+m=J.i(n,"report_type")
+l=s.jy(J.C(m==null?"":m))
+if(p.length!==0&&l!==p)continue
+k=s.k9(n)
+j=!1
+for(i=0;i<r.length;++i){h=s.k9(r[i])
+if(h===k&&k.length!==0){j=!0
+break}}if(!j)r.push(A.aB(n,t.N,t.z))}}s.f=s.av2(s.av3(r))
 s.xS()
 s.axg()},
 $S:0}
@@ -82195,9 +82305,13 @@ A.bbK.prototype={
 $1(a){return A.brM(B.h.gbq(this.a))},
 $S:19}
 A.bbC.prototype={
-$0(){var s=this,r=s.a,q=r.f,p=A.I(q).i("B<1,aE<h,@>>")
+$0(){var s=this,r=s.a,q=r.f,p=A.I(q).i("B<1,aE<h,@>>"),o,n
 q=A.D(new A.B(q,new A.bbB(r,s.b,s.c,s.d),p),p.i("aq.E"))
 q.$flags=1
+o=!1
+for(p=0;p<q.length;++p){n=r.k9(q[p])
+if(n===s.b){o=!0
+break}}if(!o&&s.b.length!==0)q.unshift(A.aB(s.d,t.N,t.z))
 r.f=q},
 $S:0}
 A.bbB.prototype={
@@ -85299,8 +85413,8 @@ D(a){var s=this,r=null,q=A.E(18),p=s.e,o=p?6:12,n=p?6:8,m=A.E(18),l=s.d,k=l?B.ap
 p=p?10:13
 return A.dV(!1,q,!0,A.wu(A.ck(A.w(s.c,1,B.ai,r,!1,A.ab(r,r,l?B.ac8:B.adE,r,r,r,r,r,r,r,r,p,r,r,B.av,r,r,!0,r,r,r,r,r,r,r,r),r,r,r),r,r),r,B.dx,new A.T(j,r,i,m,h,k,B.D),B.fY,r,r,new A.a2(o,n,o,n),r),r,!0,r,r,r,r,r,r,r,r,r,r,r,s.f,r,r,r,r,r,r,r)}}
 A.Pg.prototype={
-D(a){var s="N/A",r=this.c,q=A.iw(r),p=B.h.gX(A.wd(r).split(" - ")),o=B.e.n(A.wd(r)," - ")?B.h.gaa(A.wd(r).split(" - ")):"-",n=t.Xb
-return A.bqK(B.aWh,A.a([new A.as("Date",p),new A.as("Time",o),B.boF,new A.as("Responder",A.aU(q,B.rI,s))],n),this.d,r,A.a([new A.he("Accident Overview",B.kj,A.a([new A.as("Responder Name",A.aU(q,B.rI,s)),new A.as("Date of Accident",A.aU(q,B.zF,s)),new A.as("Time of Accident",A.aU(q,B.zG,s)),new A.as("Address",A.aU(q,B.kx,s)),new A.as("Vehicles Involved",A.cJ(q.h(0,"vehicles_involved"),s)),new A.as("Vehicle Versus",A.cJ(q.h(0,"vehicle_versus"),s))],n)),new A.he("Vehicle Details",B.IN,A.a([new A.as("Involved Vehicles",A.bnQ(q.h(0,"involved_vehicles"),s)),new A.as("Accident Types",A.cJ(q.h(0,"accident_types"),s)),new A.as("Notes",A.aU(q,B.zY,s))],n))],t.NW),"Dedicated traffic responder details page with a cleaner field layout.","Traffic Report Details")}}
+D(a){var s="-",r=this.c,q=A.iw(r),p=B.h.gX(A.wd(r).split(" - ")),o=B.e.n(A.wd(r)," - ")?B.h.gaa(A.wd(r).split(" - ")):"-",n=t.Xb,m=function(v){var i,x,y=[],z={another_vehicle:"Another Vehicle",pedestrian:"Pedestrian",fixed_object:"Fixed Object",animal:"Animal",fatal:"Fatal",non_fatal:"Non-Fatal",damage_to_property:"Damage to Property",rear_end:"Rear-End",side_swipe_same_direction:"Side Swipe Same Direction",head_on:"Head-On",angle:"Angle",side_swipe_opposite_direction:"Side Swipe Opposite Direction",hit_and_run:"Hit and Run",roll_over:"Roll Over",multiple_vehicle_collision:"Multiple Vehicle Collision",single_vehicle_accident:"Single Vehicle Accident"};if(v&&typeof v!=="string"&&v.length!=null){for(i=0;i<v.length;++i){x=String(v[i]||"").trim();if(x)y.push(z[x]||x.replace(/_/g," ").replace(/\b\w/g,function(c){return c.toUpperCase()}))}return y.length?y.join(", "):"-"}x=A.cJ(v,"-");return String(x).toUpperCase()==="N/A"?"-":x}
+return A.bqK(B.aWh,A.a([new A.as("Date",p),new A.as("Time",o),B.boF,new A.as("Responder",A.aU(q,B.rI,s))],n),this.d,r,A.a([new A.he("Accident Overview",B.kj,A.a([new A.as("Responder Name",A.aU(q,B.rI,s)),new A.as("Date of Accident",A.aU(q,B.zF,s)),new A.as("Time of Accident",A.aU(q,B.zG,s)),new A.as("Address",A.aU(q,B.kx,s)),new A.as("Vehicles Involved",A.cJ(q.h(0,"vehicles_involved"),s)),new A.as("Vehicle Versus",m(q.h(0,"vehicle_versus")))],n)),new A.he("Vehicle Details",B.IN,A.a([new A.as("Involved Vehicles",A.bnQ(q.h(0,"involved_vehicles"),s)),new A.as("Accident Types",m(q.h(0,"accident_types"))),new A.as("Notes",A.aU(q,B.zY,s))],n))],t.NW),"Dedicated traffic responder details page with a cleaner field layout.","Traffic Report Details")}}
 A.A4.prototype={
 a5(){var s=$.ax()
 return new A.V6(new A.al(B.P,s),new A.al(B.P,s),new A.al(B.P,s),new A.al(B.P,s),new A.al(B.P,s),new A.al(B.P,s),new A.al(B.P,s),new A.al(B.P,s),new A.al(B.P,s),new A.al(B.P,s),A.a([],t.PF))}}
@@ -85579,7 +85693,13 @@ j=B.e.j(h==null?"":h)
 m.LE(J.ap(j)===0?"Unable to submit report.":"Submit failed: "+A.m(j))
 n=[1]
 s=6
-break}A.bI(g,B.a8,a1?"Traffic responder report saved as draft.":"Traffic responder report submitted.",null,B.b3)
+break}h=J.i(l,"previewReport")
+if(t.f.b(h))k=A.aB(t.f.a(h),t.N,t.z)
+if(t.f.b(k)){J.bE(k,"draft",a1)
+J.bE(k,"status",a1?"draft":"submitted")
+h=J.i(k,"payload")
+if(t.f.b(h)){J.bE(h,"draft",a1)
+J.bE(h,"status",a1?"draft":"submitted")}}A.bI(g,B.a8,a1?"Traffic responder report saved as draft.":"Traffic responder report submitted.",null,B.b3)
 if(a1){h=m.c
 h.toString
 A.ak(h,!1).b9(k)
@@ -85587,7 +85707,7 @@ n=[1]
 s=6
 break}h=m.c
 h.toString
-A.ak(h,!1).bK()
+A.ak(h,!1).b9(k)
 n.push(7)
 s=6
 break
